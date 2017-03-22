@@ -1,0 +1,17 @@
+{
+  "name": "notification-ocr",
+  "version": "1.0.0",
+  "description": "This will process a directory full of images and do a basic OCR on them, and output the text, which can be sent to a text file",
+  "main": "notification-ocr.js",
+  "dependencies": {
+    "exif": "^0.6.0",
+    "node-tesseract": "^0.2.7",
+    "simple-exiftool": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jon Keegan",
+  "license": "ISC"
+}
