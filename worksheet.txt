@@ -1,0 +1,162 @@
+
+
+
+sed -i '' 's/\n/***/g'
+
+
+node test.js | sed -e'/./{H;$!d;}' -e'x;s/\n//g' > output.txt
+
+
+sed '/^$/{n;/^$/d}'
+
+sed '/^$/d'
+
+
+
+ node test.js | perl -e "s/\n\n/HELLO/g;"
+
+
+ node --trace-warnings  notification-ocr.js | sed '/DeprecationWarning/d' | sed '/AT&T/d'> output.txt
+node --trace-warnings
+
+
+//=======================
+
+convert screenshots/IMG_5911.png -threshold 50% -morphology dilate octagon  -define connected-components:area-threshold=800 -define connected-components:verbose=true -connected-components 8 -auto-level PNG8:lumps.png
+
+
+0: 750x1334+0+0 374.1,667.4 997545 srgba(0%,0%,0%,0.0662889)
+3: 53x23+688+9 712.7,20.0 1112 srgba(100%,100%,100%,59.9344)
+36: 42x28+31+1000 50.9,1012.5 950 srgba(100%,100%,100%,72.4667)
+27: 27x46+688+61 701.0,84.3 893 srgba(100%,100%,100%,74.3875)
+
+
+convert -crop 42x28+31+1000 screenshots/IMG_5911.png test_crop_1.png
+
+
+convert -crop 722x266+14+142 screenshots/IMG_5911.png crops/test_crop_1.png
+convert -crop 722x266+14+698 screenshots/IMG_5911.png crops/test_crop_2.png
+convert -crop 722x266+14+420 screenshots/IMG_5911.png crops/test_crop_3.png
+convert -crop 722x228+14+976 screenshots/IMG_5911.png crops/test_crop_4.png
+
+
+
+
+0: 750x1334+0+0 387.2,694.9 237630 srgba(0%,0%,0%,0.279676)
+23: 722x266+14+142 374.5,274.5 191409 srgba(100%,100%,100%,1.34287)
+64: 722x266+14+698 374.5,830.5 191396 srgba(100%,100%,100%,1.34292)
+38: 722x266+14+420 374.5,552.5 191387 srgba(100%,100%,100%,1.34292)
+88: 722x228+14+976 374.5,1089.5 163960 srgba(100%,100%,100%,1.39972)
+16: 181x76+14+46 82.0,84.1 9262 srgba(100%,100%,100%,8.11255)
+17: 67x76+272+46 305.1,86.4 4082 srgba(100%,100%,100%,17.0546)
+22: 515x6+0+132 256.6,134.5 3085 srgba(100%,100%,100%,22.2431)
+99: 178x21+0+1255 93.5,1269.1 1700 srgba(100%,100%,100%,39.55)
+98: 190x23+560+1253 670.9,1269.1 1548 srgba(100%,100%,100%,43.3353)
+6: 53x23+688+9 712.9,20.0 1153 srgba(100%,100%,100%,57.8387)
+3: 61x23+87+9 116.3,19.8 1039 srgba(100%,100%,100%,65.8861)
+9: 71x15+11+13 46.0,20.0 969 srgba(100%,100%,100%,70.5701)
+18: 27x47+688+60 701.0,84.2 964 srgba(100%,100%,100%,68.9824)
+5: 52x23+633+9 658.5,20.1 916 srgba(100%,100%,100%,73.0957)
+
+
+
+
+Works:
+
+convert screenshots/IMG_5911.png -threshold 50% -morphology dilate octagon  -define connected-components:area-threshold=800 -define connected-components:verbose=true -connected-components 8 -auto-level PNG8:lumps.png
+
+
+
+convert screenshots/IMG_5911.png -threshold 75% -morphology dilate octagon  -define connected-components:area-threshold=800 -define connected-components:verbose=true -connected-components 8 -auto-level PNG8:lumps.png
+
+
+
+0: 750x1334+0+0 394.7,744.7 624877 srgba(0%,0%,0%,0.105994)
+20: 722x266+14+142 337.6,263.9 157848 srgba(100%,100%,100%,1.41578)
+95: 722x197+14+420 409.8,480.5 72786 srgba(100%,100%,100%,1.90054)
+129: 722x156+14+976 336.8,1022.2 61973 srgba(100%,100%,100%,2.05768)
+108: 722x76+14+698 382.2,735.7 53219 srgba(100%,100%,100%,2.23161)
+117: 181x169+14+795 88.3,891.5 23040 srgba(100%,100%,100%,3.84687)
+97: 36x36+34+440 51.5,457.5 1264 srgba(100%,100%,100%,75.2186)
+110: 36x36+34+718 51.5,735.5 1264 srgba(100%,100%,100%,75.2186)
+22: 36x36+34+162 51.5,179.5 1252 srgba(100%,100%,100%,75.2186)
+3: 53x23+688+9 712.9,20.0 1141 srgba(100%,100%,100%,58.4365)
+17: 27x47+688+60 701.0,84.1 939 srgba(100%,100%,100%,70.7923)
+10: 71x15+11+13 46.0,20.0 897 srgba(100%,100%,100%,79.5791)
+
+
+
+
+convert screenshots/IMG_5911.png -threshold 98% -morphology Dilate Octagon threshold_out.png
+
+
+
+
+IMG_4450.PNG
+
+
+
+Analyze shapes, returns crop info for each blob, export a list to a text file:
+convert screenshots/IMG_4450.PNG -threshold 50% -morphology dilate octagon  -define connected-components:area-threshold=800 -define connected-components:verbose=true -connected-components 8 -auto-level null | sed '/^Objects/d' > IMG_4450.PNG_crops.txt
+
+
+convert screenshots/IMG_4451.PNG -connected-components 4 -auto-level -depth 8 objects.png
+-gravity south -crop x20% +repage
+
+convert screenshots/IMG_4451.PNG -black-threshold 60% -white-threshold 60%  contrast_test.png
+
+
+convert screenshots/IMG_4451.PNG -black-threshold 60% -white-threshold 60% -gravity north -crop x10.622%+10.622% +repage crop_test.png
+
+
+1136
+
+convert screenshots/IMG_4451.PNG -black-threshold 60% -white-threshold 60% -gravity north -crop x1136+0+135 +repage crop_test.png
+
+
+convert screenshots/IMG_4451.PNG -black-threshold 60% -white-threshold 60% -gravity north -crop 750x1138+0+134 +repage crop_test.png
+convert screenshots/IMG_4451.PNG -threshold 30% -morphology dilate octagon  -define connected-components:area-threshold=800 -define connected-components:verbose=true -connected-components 8 -auto-level null | sed '/^Objects/d' > crop_coords/IMG_4451.PNG_crops.txt
+
+
+convert screenshots/IMG_4451.PNG -threshold 30% -morphology dilate octagon  -define connected-components:area-threshold=400 -define connected-components:verbose=true -connected-components 8 -auto-level null | sed '/^Objects/d'
+
+
+convert screenshots/IMG_4451.PNG -threshold 50% -morphology dilate octagon  -define connected-components:area-threshold=800 -define connected-components:verbose=true -connected-components 8 -auto-level PNG8:lumps.png
+
+
+
+ -normalize
+
+ convert screenshots/IMG_4451.PNG -threshold 50%  contrast_test.png
+
+
+
+ convert screenshots/IMG_4451.PNG -black-threshold 80% -morphology dilate octagon  -define connected-components:area-threshold=800 -define connected-components:verbose=true -connected-components 8 PNG8:lumps.png
+
+ convert screenshots/IMG_4451.PNG -threshold 80% -morphology dilate octagon  -define connected-components:area-threshold=800 -define connected-components:verbose=true -connected-components 8 -auto-level  PNG8:lumps.png
+
+
+
+ convert screenshots/IMG_4451.PNG -threshold 80% -morphology dilate octagon -define connected-components:area-threshold=800 -define connected-components:verbose=true -connected-components 8 -auto-level  PNG8:lumps.png
+
+
+
+ convert screenshots/IMG_4451.PNG -threshold 80% -crop 750x1138+0+134 -gravity north +repage -morphology dilate octagon -define connected-components:area-threshold=50 -define connected-components:verbose=true -connected-components 8 -auto-level  PNG8:lumps.png
+
+
+
+-black-threshold 60% -white-threshold 60%
+
+
+convert screenshots/IMG_4451.PNG -black-threshold 40% -white-threshold 60%  -morphology dilate octagon -define connected-components:area-threshold=500 -define connected-components:verbose=true -connected-components 8 -auto-level null | sed '/^Objects/d' > crop_coords/IMG_4451.PNG_crops.txt
+
+
+convert screenshots/IMG_4451.PNG  -black-threshold 40% -white-threshold 60%  -morphology dilate octagon -define connected-components:area-threshold=500 -define connected-components:verbose=true -connected-components 8 -auto-level null | sed '/^Objects/d' > crop_coords/IMG_4451.PNG_crops.txt
+
+============================
+Steps to run the script:
+node split_test.js > im_pass_1.sh
+sh im_pass_1.sh
+node im_pass_2.js > part_2_im.sh
+sh part_2_im.sh
+=============================
