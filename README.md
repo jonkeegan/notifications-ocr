@@ -5,11 +5,10 @@ This will use tesseract to OCR a directory full of iOS screenshots and export th
 `Node.js` and `inc2csv`
 
 # Usage
-First make sure you have Node.js installed
+First make sure you have `Node.js` installed:
 ```brew install node```
 
-Then install `in2csv`
-
+Then install `in2csv` (Part of `csvkit`):
 ```sudo pip install csvkit```
 
 Clone this repo, then cd into it. Place your screenshots into the `screenshots` directory.
