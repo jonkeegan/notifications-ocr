@@ -4,4 +4,5 @@ node 2_split_test.js > crop_coords.sh
 sh crop_coords.sh
 node im_pass_2.js > part_2_im.sh
 sh part_2_im.sh
+node notification-ocr.js
 in2csv crops/all_text.json > all_text.csv
