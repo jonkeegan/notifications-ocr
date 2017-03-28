@@ -18,6 +18,6 @@ Install the node dependencies.
 
 To run the script:
 
-```node  notification-ocr.js | sed '/DeprecationWarning/d' > output.txt```
+```sh run_all.sh```
 
 Your text will be saved in `outout.txt`
