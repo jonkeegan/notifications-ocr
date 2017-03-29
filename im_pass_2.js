@@ -5,7 +5,6 @@
 // Repo: https://github.com/jonkeegan/command-line-graphics
 var fs = require('fs');
 var util = require("util");
-var _ = require('underscore');
 var directory = "crop_coords";
 
 process_files();
